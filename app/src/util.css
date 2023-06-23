@@ -1,0 +1,662 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit&display=swap');
+
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+
+/* =================== JUSTIFY CONTENT ================ */
+
+.jc-center {
+    justify-content: center;
+}
+
+.jc-space-around {
+    justify-content: space-around;
+}
+
+.jc-space-between {
+    justify-content: space-between;
+}
+
+.jc-baseline {
+    justify-content: baseline;
+}
+
+.jc-end {
+    justify-content: end;
+}
+
+.jc-first-baseline {
+    justify-content: first baseline;
+}
+
+.jc-flex-end {
+    justify-content: flex-end;
+}
+
+.jc-flex-start {
+    justify-content: flex-start;
+}
+
+.jc-last-baseline {
+    justify-content: last baseline;
+}
+
+.jc-left {
+    justify-content: left;
+}
+
+.jc-right {
+    justify-content: right;
+}
+
+.jc-safe {
+    justify-content: safe;
+}
+
+/* ===================== MARGIN ======================== */
+
+.margin-auto {
+    margin: auto;
+}
+
+
+/* ===================== TEXT ALIGN ====================*/
+
+.ta-center {
+    text-align: center;
+}
+
+.ta-end {
+    text-align: end;
+}
+
+.ta-justify {
+    text-align: justify;
+}
+
+.ta-left {
+    text-align: left;
+}
+
+.ta-right {
+    text-align: right;
+}
+
+.ta-start {
+    text-align: start;
+}
+
+.ta-inherit {
+    text-align: inherit;
+}
+
+.ta-initial {
+    text-align: initial;
+}
+
+.ta-unset {
+    text-align: unset;
+}
+
+/* ====================== ALIGN ITEM ==================== */
+
+.ai-center {
+    align-items: center;
+}
+
+.ai-flex-end {
+    align-items:flex-end;
+}
+
+.ai-flex-start{
+    align-items: flex-start;
+}
+
+
+
+/* ======================= LIST ========================= */
+
+.lst-none {
+    list-style-type: none;
+}
+
+/* ==================== POSITION ========================= */
+
+.ps-relative {
+    position: relative;
+}
+
+
+/* ==================== FLEX ELEMENT ===================== */
+
+
+.flex {
+    display: flex;
+}
+
+.f-flow-row-wrap {
+    flex-flow: row wrap;
+}
+
+.f-flow-wrap {
+    flex-flow: wrap;
+}
+
+.f-flow-column {
+    flex-flow: column;
+}
+
+.f-wrap-wrap {
+    flex-wrap: wrap;
+}
+
+.f-wrap-nowrap {
+    flex-wrap: nowrap;
+}
+
+.f-direction-row {
+    flex-direction: row;
+}
+
+.f-direction-column {
+    flex-direction: column;
+}
+
+/* =================== BG-COLOR =================== */
+
+.bgColor-171717 {
+    background-color: #171717;
+}
+
+.bgColor-282828 {
+    background-color: #282828;
+}
+
+.bgColor-0E0E0E {
+    background-color: #0E0E0E;
+}
+
+
+/* ==================== COLOR ===================== */
+
+.color-D6CD00 {
+    color: #D6CD00;
+}
+
+
+/* ==================== FONTS ===================== */
+
+.font-inter {
+    font-family: 'inter';
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.font-weight-bolder {
+    font-weight: bolder;
+}
+
+.font-weight-lighter {
+    font-weight: lighter;
+}
+
+.font-weight-100 {
+    font-weight: 100;
+}
+
+.font-weight-200 {
+    font-weight: 200;
+}
+
+.font-weight-300 {
+    font-weight: 300;
+}
+
+.font-weight-400 {
+    font-weight: 400;
+}
+
+.font-weight-500 {
+    font-weight: 500;
+}
+
+.font-weight-600 {
+    font-weight: 600;
+}
+
+.font-weight-700 {
+    font-weight: 700;
+}
+
+.font-weight-800 {
+    font-weight: 800;
+}
+
+.font-weight-900 {
+    font-weight: 900;
+}
+
+.color-white {
+    color: white;
+}
+
+/* =================== OVERFLOW ================= */
+
+.overflow-auto {
+    overflow: auto;
+}
+
+.overflow-hidden{
+    overflow: hidden;
+}
+
+.overflow-scroll{
+    overflow: scroll;
+}
+
+.overflow-visible{
+    overflow: visible;
+}
+
+.overflow-inherit{
+    overflow: inherit;
+}
+
+.overflow-initial{
+    overflow: initial;
+}
+
+.overflow-Y-auto{
+    overflow-y: auto;
+}
+
+.overflow-Y-hidden{
+    overflow-Y: hidden;
+}
+
+.overflow-Y-scroll{
+    overflow-Y: scroll;
+}
+
+.overflow-Y-visible{
+    overflow-Y: visible;
+}
+
+.overflow-Y-inherit{
+    overflow-Y: inherit;
+}
+
+.overflow-Y-initial{
+    overflow-Y: initial;
+}
+
+.overflow-X-auto{
+    overflow-X: auto;
+}
+
+.overflow-X-hidden{
+    overflow-X: hidden;
+}
+
+.overflow-X-scroll{
+    overflow-X: scroll;
+}
+
+.overflow-X-visible{
+    overflow-X: visible;
+}
+
+.overflow-X-inherit{
+    overflow-X: inherit;
+}
+
+.overflow-X-initial{
+    overflow-X: initial;
+}
+
+
+/* =================== POSITION ================ */
+
+.psn-relative {
+    position: relative;
+}
+
+.psn-absolute {
+    position: absolute;
+}
+
+.psn-static {
+    position: static;
+}
+
+.ps-sticky {
+    position: sticky;
+}
+
+.psn-initial {
+    position: initial;
+}
+
+.psn-inherit {
+    position: inherit;
+}
+
+.psn-fixed {
+    position: fixed;
+}
+
+
+/* ================== DISPLAY =================== */
+
+.dis-inline {
+    display: inline;
+}
+
+.dis-inline-block {
+    display: inline-block;
+}
+
+.dis-block {
+    display: block;
+}
+
+.dis-contents {
+    display: contents;
+}
+
+.dis-flex {
+    display: flex;
+}
+
+.dis-flow-root {
+    display: flow-root;
+}
+
+.dis-grid {
+    display: grid;
+}
+
+.dis-inline-flex {
+    display: inline-flex;
+}
+
+.dis-inline-flexbox {
+    display: inline-flexbox;
+}
+
+.dis-inline-table {
+    display: inline-table;
+}
+
+.dis-list-item {
+    display: list-item;
+}
+
+.dis-none {
+    display: none;
+}
+
+.dis-ruby {
+    display: ruby;
+}
+
+.dis-ruby-base {
+    display: ruby-base;
+}
+
+.dis-ruby-base-container {
+    display: ruby-base-container;
+}
+
+.dis-ruby-text {
+    display: ruby-text;
+}
+
+.dis-ruby-text-container {
+    display: ruby-text-container;
+}
+
+.dis-run-in {
+    display: run-in;
+}
+
+.dis-table {
+    display: table;
+}
+
+.dis-table-caption {
+    display: table-caption;
+}
+
+.dis-table-cell {
+    display: table-cell;
+}
+
+.dis-table-column {
+    display: table-column;
+}
+
+.dis-table-column-group {
+    display: table-column-group;
+}
+
+.dis-footer-group {
+    display: table-footer-group;
+}
+
+.dis-table-header-group {
+    display: table-header-group;
+}
+
+.dis-row {
+    display: table-row;
+}
+
+.dis-row-group {
+    display: table-row-group;
+}
+
+
+/* ================ FLEX DIRECTION ====================== */
+
+.flex-50 {
+    flex: 50%;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
+
+.flex-direction-row {
+    flex-direction: row;
+}
+
+.flex-direction-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.flex-direction-column-reverse {
+    flex-direction: column-reverse;
+}
+
+/* ================ FLEX WRAP ====================== */
+
+
+.flex-wrap-nowrap{
+    flex-wrap: nowrap;
+}
+
+.flex-wrap{
+    flex-wrap:wrap;
+}
+
+.flex-wrap-reverse{
+    flex-wrap: wrap-reverse;
+}
+
+.flex-wrap-inherit{
+    flex-wrap:inherit;
+}
+
+.flex-wrap-initial{
+    flex-wrap: initial;
+}
+
+.flex-wrap-unset{
+    flex-wrap:unset;
+}
+
+/* ============================== FLEX GROW ============================= */
+
+.flex-grow-inherit{
+    flex-grow: inherit;
+}
+
+.flex-grow-initial{
+    flex-grow: initial;
+}
+
+.flex-grow-unset{
+    flex-grow: unset;
+}
+
+.flex-grow-1{
+    flex-grow:1
+}
+
+
+/* =============================== FLEX SHRINK =================================== */
+
+.flex-shrink-1{
+    flex-shrink: 1;
+}
+
+.flex-shrink-inherit{
+    flex-shrink: inherit;
+}
+
+.flex-shrink-initial{
+    flex-shrink:initial;
+}
+
+.flex-shrink-unset{
+    flex-shrink: unset;
+}
+
+/* ============================ FLEX BASIS  =================================*/
+
+.flex-basis-auto{
+    flex-basis: auto;
+}
+
+.flex-basis-content{
+    flex-basis: content;
+}
+
+
+/* ========================== FLEX FLOW =====================================*/
+
+.flex-flow-column{
+    flex-flow: column;
+}
+
+.flex-column-reverse{
+    flex-flow: column-reverse;
+}
+
+.flex-nowrap{
+    flex-flow:nowrap;
+}
+
+.flex-warp{
+    flex-flow: wrap;
+}
+
+.flex-flow-row-reverse{
+    flex-flow: row-reverse;
+}
+
+.flex-flow-wrap{
+    flex-flow:wrap;
+}
+
+.flex-flow-wrap-reverse{
+    flex-flow: wrap-reverse;
+}
+
+
+.flex-flow-inherit{
+    flex-flow: inherit;
+}
+
+.flex-flow-initial{
+    flex-flow:initial;
+}
+
+.flex-flow-unset{
+    flex-flow: unset
+}
+
+/* ================================= TEXT DECORATION =============================== */
+
+
+.text-decoration-none{
+    text-decoration: none;
+}
+
+
+/* ================================= PLACE ITEM =============================== */
+
+
+.place-items-center{
+    place-items: center;
+}
+
+/* ================================ FONT SIZE ================================= */
+
+
+.font-small{
+    font-size: small;
+}
+
+
+/* ======================= TEMPLATE CLASSES OF BOOTSTRAP ====================== */
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
