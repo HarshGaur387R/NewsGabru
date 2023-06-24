@@ -9,7 +9,7 @@ export default class Navbar extends Component {
           <div className='searchAndProfilePicContainer jc-space-between flex jc-center ai-center'>
             <div className='searchInputContainer dis-flex'>
               <input type="text" placeholder='SEARCH' />
-              <img id='searchIcon' className='' src="assets\search_FILL1_wght400_GRAD0_opsz48.svg" alt="Search Icon" />
+                <img id='searchIcon' className='' src="assets\search_FILL1_wght400_GRAD0_opsz48.svg" alt="Search Icon" />
             </div>
 
             <div className='profilePictureContainer'>
@@ -17,18 +17,6 @@ export default class Navbar extends Component {
             </div>
           </div>
         </nav>
-
-        {/* <nav className='navbar2 flex jc-center ai-center psn-fixed'>
-          <ul>
-            <li>Sports</li>
-            <li>Crime</li>
-            <li>Economics</li>
-            <li>Geography</li>
-            <li>Space</li>
-            <li>War</li>
-            <li>Politics</li>
-          </ul>
-        </nav> */}
       </div>
     )
   }

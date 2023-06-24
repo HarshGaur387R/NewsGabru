@@ -6,6 +6,8 @@ body {
     font-family: 'Jura';
 }
 
+/* ======================= NAVBAR 1 ========================== */
+
 .navbar1 {
     background-color: #050036;
     width: calc(100vw - 40px);
@@ -22,7 +24,7 @@ body {
 }
 
 .searchAndProfilePicContainer {
-    gap: 90px;
+    gap: 70px;
     flex: 30%;
 }
 
@@ -30,14 +32,14 @@ body {
     width: 80%;
 }
 
-.searchInputContainer{
+.searchInputContainer {
     background-color: #46001E;
-    box-shadow: inset -2px 4px 4px 0px rgb(0, 0, 0,0.25);
+    box-shadow: inset -2px 4px 4px 0px rgb(0, 0, 0, 0.25);
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 12px;
     padding-right: 12px;
-    gap:6px;
+    gap: 6px;
 }
 
 .searchInputContainer input {
@@ -54,25 +56,62 @@ body {
     color: #575757;
 }
 
-#searchIcon{
+#searchIcon {
     width: 30px;
     cursor: pointer;
 }
 
-.profilePictureContainer{
+.profilePictureContainer {
     border-radius: 50%;
     padding: 5px;
     background-color: #2A2A2A;
 }
 
-
-
 #profilePictureInNavbar {
     width: 35px;
 }
 
+/* ========================= NAVBAR OPTIONS ========================= */
 
 
+.navbar2 {
+    color: white;
+    font-size: 20px;
+    width: 100vw;
+    height: 40px;
+    background-color: #050036;
+    top: 80px;
+    grid-template-columns: 90% auto;
+    padding-top: 20px;
+    font-weight: 700;
+}
+
+.options-list {
+    background-color: #050036;
+    gap: calc(70% / 8);
+    width: 80%;
+    overflow-x: auto;
+}
+
+.options-list li {
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar {
+    width: 1em;
+}
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
 
 /* ============================ HOMEPAGE =============================== */
 
