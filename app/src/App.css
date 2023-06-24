@@ -6,7 +6,7 @@ body {
     font-family: 'Jura';
 }
 
-.navbar {
+.navbar1 {
     background-color: #050036;
     width: calc(100vw - 40px);
     height: 80px;
@@ -30,27 +30,49 @@ body {
     width: 80%;
 }
 
-.searchInputContainer input {
+.searchInputContainer{
     background-color: #46001E;
     box-shadow: inset -2px 4px 4px 0px rgb(0, 0, 0,0.25);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+    gap:6px;
+}
+
+.searchInputContainer input {
+    background-color: transparent;
     color: white;
     border: none;
     width: 100%;
     min-width: 300px;
     font-size: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 12px;
-    padding-right: 12px;
+    outline: none;
 }
 
 .searchInputContainer input::placeholder {
     color: #575757;
 }
 
-#profilePictureInNavbar {
-    width: 50px;
+#searchIcon{
+    width: 30px;
+    cursor: pointer;
 }
+
+.profilePictureContainer{
+    border-radius: 50%;
+    padding: 5px;
+    background-color: #2A2A2A;
+}
+
+
+
+#profilePictureInNavbar {
+    width: 35px;
+}
+
+
+
 
 /* ============================ HOMEPAGE =============================== */
 
