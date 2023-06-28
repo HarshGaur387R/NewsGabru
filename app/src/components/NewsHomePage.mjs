@@ -4,12 +4,13 @@ export default class NewsHomePage extends Component {
   render() {
     return (
       <div>
-        <div className='homepage'>
-          {`Hello From News Homepage`}
-          <NewsItem></NewsItem>
-          <NewsItem></NewsItem>
-          <NewsItem></NewsItem>
-          <NewsItem></NewsItem>
+        <div className='homepageContainer'>
+          <div className='homepage dis-flex jc-center ai-center flex-wrap'>
+            <NewsItem newsId={"first"}></NewsItem>
+            <NewsItem newsId={"second"}></NewsItem>
+            <NewsItem newsId={"third"}></NewsItem>
+            <NewsItem newsId={"fourth"}></NewsItem>
+          </div>
         </div>
       </div>
     )

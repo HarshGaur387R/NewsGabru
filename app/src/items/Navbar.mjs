@@ -8,7 +8,7 @@ export default class Navbar extends Component {
           <div className='websiteLogoContainer'>NEWS GABRU</div>
           <div className='searchAndProfilePicContainer jc-space-between flex jc-center ai-center'>
             <div className='searchInputContainer dis-flex'>
-              <input type="text" placeholder='SEARCH' />
+              <input id='searchInput' type="text" placeholder='SEARCH' />
                 <img id='searchIcon' className='' src="assets\search_FILL1_wght400_GRAD0_opsz48.svg" alt="Search Icon" />
             </div>
 

@@ -38,7 +38,7 @@ export default class NavbarOptions extends Component {
         return (
             <div>
                 <nav className='navbar2 jc-center ai-center psn-fixed dis-flex'>
-                    <img id='PreviousButton' src="assets\arrow_back_ios_FILL1_wght400_GRAD0_opsz48.svg" alt="Previous arrow" />
+                    <img id='PreviousButton' src="assets\arrowBackward.svg" alt="Previous arrow" />
                     <ul className='options-list dis-flex list-none'>
                         <li>Sports</li>
                         <li>Crime</li>
@@ -54,7 +54,7 @@ export default class NavbarOptions extends Component {
                         <li>Programming</li>
                         <li>Programming</li>
                     </ul>
-                    <img id='NextButton' src="assets\arrow_forward_ios_FILL1_wght400_GRAD0_opsz48.svg" alt="Next arrow" />
+                    <img id='NextButton' src="assets\arrowForward.svg" alt="Next arrow" />
                 </nav>
             </div>
         )
