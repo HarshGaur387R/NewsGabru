@@ -26,13 +26,9 @@ body {
 
 .searchAndProfilePicContainer {
     gap: 40px;
-    /* flex: 30%; */
     max-width: 700px;
 }
 
-.searchAndProfilePicContainer .searchInputContainer {
-    /* width: 80%; */
-}
 
 .searchInputContainer {
     background-color: #46001E;
@@ -96,7 +92,7 @@ body {
 }
 
 .options-list li{
-    padding: 10px 20px 15px 20px;
+    padding: 10px 20px 20px 20px;
     border-top: 2px solid transparent;
 }
 
@@ -121,10 +117,8 @@ body {
 
 
 .cardContainer{
-    background-image: url('https://th.bing.com/th/id/R.f8300f8f433b90e19ca2f807d14d9d38?rik=hP318Di8708nbA&riu=http%3a%2f%2fwww.thelandofsnows.com%2fwp-content%2fuploads%2f2012%2f05%2fDSC01637.jpg&ehk=uXjOJtJsR1QBc%2bbWiZjT2Velc%2fcQP2wNDU4J%2fVWexSg%3d&risl=&pid=ImgRaw&r=0');
-    background-position: center;
     background-repeat: no-repeat;
-    background-size: 450px;
+    background-size: 100%;
     color: white;
     min-width: 300px;
     width: 400px;
@@ -132,11 +126,12 @@ body {
     transition: background-size .5s ease;
 }
 
-#thumbnailImage{
-    width: 100%;
+.cardContainer:hover{
+    background-size: 120%;
 }
 
 .newsHeadlineAndFooterContainer{
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.603);
     padding: 5px;
 }

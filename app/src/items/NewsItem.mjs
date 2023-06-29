@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 
+
 export default class NewsItem extends Component {
 
   componentDidMount() {
     const newsPreviewArray = document.querySelectorAll('.newsPreview');
     const cardContainerArray = document.querySelectorAll('.cardContainer');
-    
 
     if (!newsPreviewArray || !cardContainerArray)
       return;
@@ -14,14 +14,12 @@ export default class NewsItem extends Component {
       e.addEventListener('mouseover', (event) => {
         const elem = document.querySelector(`#${e.id} .newsPreview`);
         elem.style.height = "94px";
-        e.style.backgroundSize = "500px";
-        
+
       })
 
       e.addEventListener('mouseout', () => {
         const elem = document.querySelector(`#${e.id} .newsPreview`);
         elem.style.height = "0px";
-        e.style.backgroundSize = "450px";
       })
     });
 
@@ -30,25 +28,25 @@ export default class NewsItem extends Component {
   render() {
 
     const id = this.props.newsId;
+    const defaultImageURL = 'https://th.bing.com/th/id/R.f8300f8f433b90e19ca2f807d14d9d38?rik=hP318Di8708nbA&riu=http%3a%2f%2fwww.thelandofsnows.com%2fwp-content%2fuploads%2f2012%2f05%2fDSC01637.jpg&ehk=uXjOJtJsR1QBc%2bbWiZjT2Velc%2fcQP2wNDU4J%2fVWexSg%3d&risl=&pid=ImgRaw&r=0';
 
     return (
       <>
-        <div id={id} className='cardContainer dis-flex ai-flex-end'>
-
+        <div id={id} className='cardContainer dis-flex ai-flex-end' style={{ backgroundImage: `url("${this.props.imageURL && this.props.imageURL !== "" ? this.props.imageURL : defaultImageURL}")` }}>
           <div className='newsHeadlineAndFooterContainer'>
             <div className="newsHeadline">
               <div className='newsTitle'>
-                Breaking News : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id maiores, atque aspernatur.
+                {this.props.title}
               </div>
 
               <div className="newsPreview">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt id cumque exercitationem quis pariatur delectus porro perferendis. Voluptas, impedit inventore! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id asperiores obcaecati adipisci iusto voluptate numquam nemo autem cupiditate. Dolorem ea accusantium veniam, sint ducimus voluptates, totam eveniet est blanditiis dolore quas officia sed harum? Quis sequi quisquam maxime nostrum voluptatum velit dolorum repellat voluptate enim.
+                {this.props.description}
               </div>
             </div>
 
             <div className='cardFooter dis-flex ai-center jc-center jc-space-between'>
-              <code>11-11-2023</code>
-              <code>Author</code>
+              <code>{this.props.publishedAt}</code>
+              <code>{this.props.source}</code>
             </div>
           </div>
 
