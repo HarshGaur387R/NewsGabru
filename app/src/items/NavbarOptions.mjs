@@ -40,6 +40,7 @@ export default class NavbarOptions extends Component {
                 <nav className='navbar2 jc-center ai-center psn-fixed dis-flex'>
                     <img id='PreviousButton' src="assets\arrowBackward.svg" alt="Previous arrow" />
                     <ul className='options-list dis-flex list-none'>
+                        <li>All</li>
                         <li>Sports</li>
                         <li>Crime</li>
                         <li>Economics</li>
