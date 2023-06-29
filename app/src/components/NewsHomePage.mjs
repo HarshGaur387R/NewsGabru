@@ -15,7 +15,6 @@ function generateRandomString(){
   return result;
 }
 
-
 const NewsItemsList = ()=>{
 
   const articles = test_data.articles;
