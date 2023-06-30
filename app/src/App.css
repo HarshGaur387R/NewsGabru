@@ -47,8 +47,8 @@ body {
     width: 100%;
     min-width: 300px;
     font-size: 20px;
-    outline: none;
-}
+    outline: transparent;
+}   
 
 .searchInputContainer input::placeholder {
     color: #575757;
@@ -158,19 +158,60 @@ body {
 .profilebar-container{
     z-index: 21;
     right: 0;
-    width: 300px;
+    width: 400px;
     height: 100vh;
     background-color: rgba(17, 15, 37, 0.94);
 }
 
+.profilebar-container hr{
+ border-color: gray;
+}
+
 .image-container{
     margin-top: 30px;
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
+    border: 1px solid white;
     background-color: #2A2A2A;
     padding: 10px;
 }
+
+
+.sec2-prof-container{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.buttons-container{
+    gap: 30px;
+}
+
+
+.buttons-container button{
+    border: none;
+    font-family: 'Jura';
+    font-weight: 700;
+    font-size: x-large;
+    height: 70px;
+    width: 140px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.348);
+}
+
+.buttons-container button:hover{
+    box-shadow: inset 0px 0px 20px -10px white;
+    border: 2px solid white;
+}
+
+
+.buttons-container button:active{
+    box-shadow: none;
+    color: black;
+    background-color: white;
+}
+
 
 .image-container img{
     width: 100%;
