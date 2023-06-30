@@ -19,11 +19,15 @@ export default class Profilebar extends Component {
           <hr />
 
           <div className='sec3-prof-container'>
-            <ul>
-              <li>Language</li>
-              <li>Settings</li>
-              <li>Contact Us</li>
-              <li>Support</li>
+            <ul className='list-none'>
+              <li><a href="/" className='text-decoration-none dis-flex jc-flex-start ai-center'><img src="assets\profilebarImages\language_FILL0_wght400_GRAD0_opsz48.svg" alt="Change language" />Language</a></li>
+
+              <li><a href="/" className='text-decoration-none dis-flex jc-flex-start ai-center'><img src="assets\profilebarImages\settings_FILL1_wght400_GRAD0_opsz48.svg" alt="settings" />Settings</a></li>
+
+              <li><a href="/" className='text-decoration-none dis-flex jc-flex-start ai-center'><img src="assets\profilebarImages\mail_FILL1_wght400_GRAD0_opsz48.svg" alt="contact us" />Contact Us</a></li>
+
+              <li><a href="/" className='text-decoration-none dis-flex jc-flex-start ai-center'><img src="assets\profilebarImages\support_agent_FILL0_wght400_GRAD0_opsz48.svg" alt="support" />Support</a></li>
+
             </ul>
           </div>
         </div>

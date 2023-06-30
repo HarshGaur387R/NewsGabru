@@ -48,7 +48,7 @@ body {
     min-width: 300px;
     font-size: 20px;
     outline: transparent;
-}   
+}
 
 .searchInputContainer input::placeholder {
     color: #575757;
@@ -91,71 +91,74 @@ body {
     overflow-x: hidden;
 }
 
-.options-list li{
+.options-list li {
     padding: 10px 20px 20px 20px;
     border-top: 2px solid transparent;
 }
 
-.options-list li:hover{
+.options-list li:hover {
     color: aqua;
 }
 
-.options-list li:active{
+.options-list li:active {
     border-top: 2px solid white;
     background-color: #060047;
 }
 
 /* ============================ HOMEPAGE =============================== */
 
-.homepage{
+.homepage {
     gap: 50px;
-    padding-top: 180px ;
+    padding-top: 180px;
 }
 
 
 /* ============================ CARD CONTAINER ========================= */
 
 
-.cardContainer{
+.cardContainer {
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-position: center;
+    background-size: cover;
     color: white;
     min-width: 300px;
     width: 400px;
     height: 300px;
-    transition: background-size .5s ease;
+    transition: transform .5s ease;
 }
 
-.cardContainer:hover{
-    background-size: 120%;
+.cardContainer:hover {
+    transform: scale(1.1);
+    filter: brightness(110%);
 }
 
-.newsHeadlineAndFooterContainer{
+.newsHeadlineAndFooterContainer {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.603);
     padding: 5px;
 }
 
-.newsTitle{
+.newsTitle {
     font-size: large;
     font-weight: 700;
 }
 
-.newsPreview{
+.newsPreview {
     padding-top: 10px;
     transition: all .5s ease;
-    overflow : hidden;
+    overflow: hidden;
     max-height: 95px;
     height: 0px;
 }
 
-.cardFooter{
+.cardFooter {
     padding-top: 5px;
 }
 
 /* ===================================== PROFILEBAR =============================== */
 
-.profilebar-container{
+.profilebar-container {
+    overflow: hidden;
     z-index: 21;
     right: 0;
     width: 400px;
@@ -163,11 +166,11 @@ body {
     background-color: rgba(17, 15, 37, 0.94);
 }
 
-.profilebar-container hr{
- border-color: gray;
+.profilebar-container hr {
+    border-color: gray;
 }
 
-.image-container{
+.image-container {
     margin-top: 30px;
     width: 100px;
     height: 100px;
@@ -178,17 +181,17 @@ body {
 }
 
 
-.sec2-prof-container{
+.sec2-prof-container {
     margin-top: 30px;
     margin-bottom: 30px;
 }
 
-.buttons-container{
+.buttons-container {
     gap: 30px;
 }
 
 
-.buttons-container button{
+.buttons-container button {
     border: none;
     font-family: 'Jura';
     font-weight: 700;
@@ -200,19 +203,61 @@ body {
     border: 2px solid rgba(255, 255, 255, 0.348);
 }
 
-.buttons-container button:hover{
+.buttons-container button:hover {
     box-shadow: inset 0px 0px 20px -10px white;
     border: 2px solid white;
 }
 
 
-.buttons-container button:active{
+.buttons-container button:active {
     box-shadow: none;
     color: black;
     background-color: white;
 }
 
 
-.image-container img{
+.image-container img {
     width: 100%;
+}
+
+.sec3-prof-container ul {
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.sec3-prof-container li{
+    position: relative;
+}
+
+.sec3-prof-container li::before{
+    content: '';
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform .2s ease;
+    background-color: white;
+    transform: translateX(-400px);
+}
+
+.sec3-prof-container li:hover::before{
+    transform: translateX(-10px);
+}
+
+.sec3-prof-container ul li a:hover{
+    filter:brightness(0%);
+}
+
+.sec3-prof-container ul li a {
+    color: white;
+    font-size: xx-large;
+    letter-spacing: 2px;
+    font-weight: 600;
+    padding: 15px;
+    gap: 15px;
+}
+
+
+.sec3-prof-container ul a img {
+    width: 45px;
 }
