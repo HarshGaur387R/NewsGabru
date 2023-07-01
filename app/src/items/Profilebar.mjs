@@ -2,17 +2,21 @@ import React, { Component } from 'react'
 
 export default class Profilebar extends Component {
 
+  handleOnEventContainerClick(event) {
+    if (event.target.className === "profilebar-event-container")
+      this.props.setShowProfileBar(false);
+    return;
+  }
+
   render() {
 
-    console.log(this.props.showProfileBar);
     if (!this.props.showProfileBar)
       return;
 
     return (
       <>
-        <div className='profilebar-event-container'>
-
-          <div className='profilebar-container psn-fixed'>
+        <div className='profilebar-event-container' onClick={(event) => this.handleOnEventContainerClick(event)}>
+          <div id='profilebar-container-id' className='profilebar-container psn-fixed'>
             <div className='sec1-prof-container dis-flex ai-center jc-center'>
               <div className='image-container dis-flex jc-center ai-center'>
                 <img src="assets\person_FILL1_wght400_GRAD0_opsz48.svg" alt="profile-pic" />

@@ -26,7 +26,7 @@ export default class App extends Component {
     return (
       <div>
         <Navbar showProfileBar={this.state.showProfileBar} setShowProfileBar={this.setShowProfileBar}></Navbar>
-        <Profilebar showProfileBar={this.state.showProfileBar} ></Profilebar>
+        <Profilebar showProfileBar={this.state.showProfileBar} setShowProfileBar={this.setShowProfileBar}></Profilebar>
         <NavbarOptions></NavbarOptions>
         <NewsHomePage></NewsHomePage>
       </div>

@@ -177,7 +177,6 @@ body {
     width: 400px;
     height: 100vh;
     background-color: rgba(17, 15, 37, 0.901);
-    /* transform: translateX(400px); */
 }
 
 .profilebar-container hr {
