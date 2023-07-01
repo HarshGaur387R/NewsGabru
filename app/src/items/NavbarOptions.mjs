@@ -1,45 +1,43 @@
-import React, { Component } from 'react'
+import React, { Component} from 'react';
 
 export default class NavbarOptions extends Component {
-
-    componentDidMount() {
-        let nextBtn = document.getElementById('NextButton');
-        let prevBtn = document.getElementById('PreviousButton');
-        let navbarItemList = document.querySelector('.options-list');
-
-        let scrollPosition = 0;
-        const scrollStep = 200; // Set the desired scroll step
-
-        if (nextBtn && prevBtn && navbarItemList) {
-
-            nextBtn.addEventListener('click', () => {
-                scrollPosition += scrollStep;
-                navbarItemList.scrollTo({
-                    top: 0,
-                    left: scrollPosition,
-                    behavior: 'smooth'
-                });
-            });
-
-            prevBtn.addEventListener('click', () => {
-                scrollPosition -= scrollStep;
-                navbarItemList.scrollTo({
-                    top: 0,
-                    left: scrollPosition,
-                    behavior: 'smooth'
-                });
-            });
-
-        }
+    constructor(props) {
+        super(props);
+        this.state = {
+            scrollStep: 200,
+        };
+        this.navbarItemListRef = React.createRef();
     }
 
-    render() {
+    handleNextClick = () => {
+        const navbarItemList = this.navbarItemListRef.current;
+        navbarItemList.scrollTo({
+            top: 0,
+            left: navbarItemList.scrollLeft + this.state.scrollStep,
+            behavior: 'smooth',
+        });
+    };
 
+    handlePrevClick = () => {
+        const navbarItemList = this.navbarItemListRef.current;
+        navbarItemList.scrollTo({
+            top: 0,
+            left: navbarItemList.scrollLeft - this.state.scrollStep,
+            behavior: 'smooth',
+        });
+    };
+
+    render() {
         return (
             <div>
-                <nav className='navbar2 jc-center ai-center psn-fixed dis-flex'>
-                    <img id='PreviousButton' src="assets\arrowBackward.svg" alt="Previous arrow" />
-                    <ul className='options-list dis-flex list-none'>
+                <nav className="navbar2 jc-center ai-center psn-fixed dis-flex">
+                    <img
+                        id="PreviousButton"
+                        src="assets\arrowBackward.svg"
+                        alt="Previous arrow"
+                        onClick={this.handlePrevClick}
+                    />
+                    <ul className="options-list dis-flex list-none" ref={this.navbarItemListRef}>
                         <li>All</li>
                         <li>Sports</li>
                         <li>Crime</li>
@@ -55,9 +53,9 @@ export default class NavbarOptions extends Component {
                         <li>Programming</li>
                         <li>Programming</li>
                     </ul>
-                    <img id='NextButton' src="assets\arrowForward.svg" alt="Next arrow" />
+                    <img id="NextButton" src="assets\arrowForward.svg" alt="Next arrow" onClick={this.handleNextClick} />
                 </nav>
             </div>
-        )
+        );
     }
 }
