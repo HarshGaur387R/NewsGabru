@@ -1,6 +1,16 @@
 import React, { Component } from 'react'
 
 export default class Navbar extends Component {
+
+  constructor(props) {
+    super(props);
+    this.handleOnProfilePictureClick = this.handleOnProfilePictureClick.bind(this);
+  }
+  
+  handleOnProfilePictureClick(){
+    this.props.setShowProfileBar(!this.props.showProfileBar)
+  }
+
   render() {
     return (
       <div>
@@ -12,7 +22,7 @@ export default class Navbar extends Component {
                 <img id='searchIcon' className='' src="assets\search_FILL1_wght400_GRAD0_opsz48.svg" alt="Search Icon" />
             </div>
 
-            <div className='profilePictureContainer'>
+            <div onClick={()=>this.handleOnProfilePictureClick()} className='profilePictureContainer'>
               <img id='profilePictureInNavbar' src="assets\person_FILL1_wght400_GRAD0_opsz48.svg" alt="Profile_Picture_Of_User" />
             </div>
           </div>
