@@ -93,15 +93,15 @@ body {
 
 .options-list li {
     padding: 10px 20px 20px 20px;
-    border-top: 2px solid transparent;
 }
 
 .options-list li:hover {
     color: aqua;
 }
 
-.options-list li:active {
+.active{
     border-top: 2px solid white;
+    color: aqua;
     background-color: #060047;
 }
 
