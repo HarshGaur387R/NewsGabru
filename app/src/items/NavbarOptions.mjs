@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-// On click save the index of clicked item into active index. And create a logic for li className . If active index is === li index than turn on the active class
-
-
 export default class NavbarOptions extends Component {
     constructor(props) {
         super(props);
@@ -13,10 +10,11 @@ export default class NavbarOptions extends Component {
         this.navbarItemListRef = React.createRef();
     }
 
-    handleOnListItemCLick(index){
+    handleOnListItemCLick(index,value){
         this.setState({
             activeIndex : index
         })
+        this.props.setCategory(value)
     }
 
     handleNextClick = () => {
@@ -40,9 +38,9 @@ export default class NavbarOptions extends Component {
     render() {
 
         const items = [
-            'All', 'Sports', 'Crime', 'Economics', 'Geography', 'Space', 'War', 'Politics', 'Celebrities', 'Crypto', 'Programming' ];
+            'All', 'Business', 'Entertainment', 'Health', 'Science', 'Sports', 'Technology'];
 
-        const listItems = items.map((item, index) => <li onClick={()=>this.handleOnListItemCLick(index)} className={this.state.activeIndex === index?'active':''} key={index}>{item}</li>);
+        const listItems = items.map((item, index) => <li onClick={()=>this.handleOnListItemCLick(index,item)} className={this.state.activeIndex === index?'active':''} key={index}><button value={item} type='button'>{item}</button></li>);
 
         return (
             <div>

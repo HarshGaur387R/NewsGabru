@@ -1,30 +1,38 @@
 import React, { Component } from 'react'
 
+const defaultImageURL = 'https://th.bing.com/th/id/R.f8300f8f433b90e19ca2f807d14d9d38?rik=hP318Di8708nbA&riu=http%3a%2f%2fwww.thelandofsnows.com%2fwp-content%2fuploads%2f2012%2f05%2fDSC01637.jpg&ehk=uXjOJtJsR1QBc%2bbWiZjT2Velc%2fcQP2wNDU4J%2fVWexSg%3d&risl=&pid=ImgRaw&r=0';
 
 export default class NewsItem extends Component {
 
-  constructor(){
+  constructor() {
     super()
     this.state = {
-      increasePreviewTextHeight: false
+      increasePreviewTextHeight: false,
+    }
+  }
+
+  setBackgroundImage(imageFromProp) {
+    if (imageFromProp && imageFromProp !== "") {
+      return imageFromProp;}
+    else {
+      return defaultImageURL;
     }
   }
 
   render() {
 
     const id = this.props.newsId;
-    const defaultImageURL = 'https://th.bing.com/th/id/R.f8300f8f433b90e19ca2f807d14d9d38?rik=hP318Di8708nbA&riu=http%3a%2f%2fwww.thelandofsnows.com%2fwp-content%2fuploads%2f2012%2f05%2fDSC01637.jpg&ehk=uXjOJtJsR1QBc%2bbWiZjT2Velc%2fcQP2wNDU4J%2fVWexSg%3d&risl=&pid=ImgRaw&r=0';
 
     return (
       <>
-        <div onMouseOver={()=> this.setState({increasePreviewTextHeight:true})} onMouseOut={()=> this.setState({increasePreviewTextHeight:false})} id={id} className='cardContainer dis-flex ai-flex-end' style={{ backgroundImage: `url("${this.props.imageURL && this.props.imageURL !== "" ? this.props.imageURL : defaultImageURL}")` }}>
+        <div onMouseOver={() => this.setState({ increasePreviewTextHeight: true })} onMouseOut={() => this.setState({ increasePreviewTextHeight: false })} id={id} className='cardContainer dis-flex ai-flex-end' style={{ backgroundImage: `url("${this.setBackgroundImage(this.props.imageURL)}")` }}>
           <div className='newsHeadlineAndFooterContainer'>
             <div className="newsHeadline">
               <div className='newsTitle'>
                 {this.props.title}
               </div>
 
-              <div className="newsPreview" style={{height: this.state.increasePreviewTextHeight? "94px" : "0px"}}>
+              <div className="newsPreview" style={{ height: this.state.increasePreviewTextHeight ? "94px" : "0px" }}>
                 {this.props.description}
               </div>
             </div>

@@ -95,16 +95,25 @@ body {
     padding: 10px 20px 20px 20px;
 }
 
-.options-list li:hover {
+.options-list button {
+    background-color:transparent;
+    border: none;
+    color: white;
+    font-size: x-large;
+}
+
+.options-list li button:hover{
     color: aqua;
 }
 
 .active{
     border-top: 2px solid white;
-    color: aqua;
     background-color: #060047;
 }
 
+.active button{
+    color: aqua;
+}
 /* ============================ HOMEPAGE =============================== */
 
 .homepage {
