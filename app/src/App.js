@@ -12,7 +12,7 @@ export default class App extends Component {
     super(props);
     this.state = {
       showProfileBar: false,
-      category: ''
+      category: 'All'
     }
     this.setShowProfileBar = this.setShowProfileBar.bind(this);
     this.setCategory = this.setCategory.bind(this);
@@ -27,7 +27,7 @@ export default class App extends Component {
   setCategory(value) {
     this.setState({
       category: value
-    },()=>console.log(this.state.category))
+    })
   }
 
   render() {

@@ -21,17 +21,35 @@ export default class NewsHomePage extends Component {
     this.NewsItemsList = this.NewsItemsList.bind(this); // Bind the function to the component instance
   }
 
-  async componentDidMount() {
-    let category = !this.props.category || this.props.category === "All" ? '' : this.props.category;
-    let url = `${config.TOPHEADLINES_API}?country=in&apiKey=${config.API_KEY}`;
+  async fetchArticles(category) {
+    let url;
 
-    // ========================== CREATE DYNAMIC FEATURING API ====================================
+    if (category === '' || category === 'All') {
+      url = `${config.TOPHEADLINES_API}?country=in&apiKey=${config.API_KEY}`;
+    } else {
+      url = `${config.TOPHEADLINES_API}?category=${category}&country=in&apiKey=${config.API_KEY}`;
+    }
 
     const res = await fetch(url);
     const parsedRes = await res.json();
 
     this.setState({ articles: parsedRes.articles });
   }
+
+  async componentDidMount() {
+    const { category } = this.props;
+    await this.fetchArticles(category);
+  }
+
+  async componentDidUpdate(prevProps) {
+    const { category } = this.props;
+
+    if (category !== prevProps.category) {
+      await this.fetchArticles(category);
+    }
+  }
+
+
 
   NewsItemsList() {
     const articles = this.state.articles || [];

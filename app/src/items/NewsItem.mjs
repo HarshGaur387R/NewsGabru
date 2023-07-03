@@ -13,7 +13,8 @@ export default class NewsItem extends Component {
 
   setBackgroundImage(imageFromProp) {
     if (imageFromProp && imageFromProp !== "") {
-      return imageFromProp;}
+      return imageFromProp;
+    }
     else {
       return defaultImageURL;
     }
@@ -25,25 +26,27 @@ export default class NewsItem extends Component {
 
     return (
       <>
-        <div onMouseOver={() => this.setState({ increasePreviewTextHeight: true })} onMouseOut={() => this.setState({ increasePreviewTextHeight: false })} id={id} className='cardContainer dis-flex ai-flex-end' style={{ backgroundImage: `url("${this.setBackgroundImage(this.props.imageURL)}")` }}>
-          <div className='newsHeadlineAndFooterContainer'>
-            <div className="newsHeadline">
-              <div className='newsTitle'>
-                {this.props.title}
+        <a href={`${this.props.newsUrl}`} target='_blank' rel='noreferrer' className='text-decoration-none'>
+          <div onMouseOver={() => this.setState({ increasePreviewTextHeight: true })} onMouseOut={() => this.setState({ increasePreviewTextHeight: false })} id={id} className='cardContainer dis-flex ai-flex-end' style={{ backgroundImage: `url("${this.setBackgroundImage(this.props.imageURL)}")` }}>
+            <div className='newsHeadlineAndFooterContainer'>
+              <div className="newsHeadline">
+                <div className='newsTitle'>
+                  {this.props.title}
+                </div>
+
+                <div className="newsPreview" style={{ height: this.state.increasePreviewTextHeight ? "94px" : "0px" }}>
+                  {this.props.description}
+                </div>
               </div>
 
-              <div className="newsPreview" style={{ height: this.state.increasePreviewTextHeight ? "94px" : "0px" }}>
-                {this.props.description}
+              <div className='cardFooter dis-flex ai-center jc-center jc-space-between'>
+                <code>{this.props.publishedAt}</code>
+                <code>{this.props.source}</code>
               </div>
             </div>
 
-            <div className='cardFooter dis-flex ai-center jc-center jc-space-between'>
-              <code>{this.props.publishedAt}</code>
-              <code>{this.props.source}</code>
-            </div>
           </div>
-
-        </div>
+        </a>
       </>
     )
   }
