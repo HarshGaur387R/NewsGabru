@@ -13,43 +13,71 @@ function generateRandomString() {
 }
 
 export default class NewsHomePage extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      articles: []
+      articles: [],
+      currentPage: 1
     };
-    this.NewsItemsList = this.NewsItemsList.bind(this); // Bind the function to the component instance
+    this.NewsItemsList = this.NewsItemsList.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
   async fetchArticles(category) {
+    const { currentPage } = this.state;
     let url;
 
     if (category === '' || category === 'All') {
-      url = `${config.TOPHEADLINES_API}?country=in&apiKey=${config.API_KEY}`;
+      url = `${config.TOPHEADLINES_API}?country=in&apiKey=${config.API_KEY}&page=${currentPage}`;
     } else {
-      url = `${config.TOPHEADLINES_API}?category=${category}&country=in&apiKey=${config.API_KEY}`;
+      url = `${config.TOPHEADLINES_API}?category=${category}&country=in&apiKey=${config.API_KEY}&page=${currentPage}`;
     }
 
     const res = await fetch(url);
     const parsedRes = await res.json();
 
-    this.setState({ articles: parsedRes.articles });
+    const newArticles = parsedRes.articles || [];
+    this.setState((prevState) => ({
+      articles: [...prevState.articles, ...newArticles],
+    }));
   }
 
   async componentDidMount() {
     const { category } = this.props;
     await this.fetchArticles(category);
+    window.addEventListener('scroll', this.handleScroll);
   }
 
   async componentDidUpdate(prevProps) {
     const { category } = this.props;
 
     if (category !== prevProps.category) {
-      await this.fetchArticles(category);
+      this.setState({ currentPage: 1, articles: [] }, async () => {
+        await this.fetchArticles(category);
+      });
     }
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
 
+  handleScroll() {
+    const { innerHeight } = window;
+    const { scrollHeight, scrollTop } = document.documentElement;
+
+    if (scrollHeight - scrollTop === innerHeight) {
+      this.setState(
+        (prevState) => ({
+          currentPage: prevState.currentPage + 1,
+        }),
+        async () => {
+          const { category } = this.props;
+          await this.fetchArticles(category);
+        }
+      );
+    }
+  }
 
   NewsItemsList() {
     const articles = this.state.articles || [];
@@ -81,7 +109,7 @@ export default class NewsHomePage extends Component {
       <div>
         <div className='homepageContainer'>
           <div className='homepage dis-flex jc-center ai-center flex-wrap'>
-            {this.NewsItemsList()} {/* Call the function as an expression */}
+            {this.NewsItemsList()}
           </div>
         </div>
       </div>
