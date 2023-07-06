@@ -3,6 +3,8 @@ import NewsItem from '../items/NewsItem.mjs';
 import { v4 as uuidv4 } from 'uuid';
 import random from 'random';
 import { config } from '../secretes/config.mjs';
+import LoadingCircle from '../items/LoadingCircle.mjs';
+
 
 function generateRandomString() {
   const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -17,7 +19,10 @@ export default class NewsHomePage extends Component {
     super(props);
     this.state = {
       articles: [],
-      currentPage: 1
+      currentPage: 1,
+      showLoadingCircle: true,
+      count: 0,
+      loading: false
     };
     this.NewsItemsList = this.NewsItemsList.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
@@ -27,19 +32,30 @@ export default class NewsHomePage extends Component {
     const { currentPage } = this.state;
     let url;
 
-    if (category === '' || category === 'All') {
-      url = `${config.TOPHEADLINES_API}?country=in&apiKey=${config.API_KEY}&page=${currentPage}`;
-    } else {
-      url = `${config.TOPHEADLINES_API}?category=${category}&country=in&apiKey=${config.API_KEY}&page=${currentPage}`;
+    // url = `${config.TOPHEADLINES_API}?category=${category}&country=in&apiKey=${config.API_KEY}&page=${currentPage}`;
+    url = `${config.TESTING_AP}/category/${category}/in.json`
+
+    try {
+      console.log(this.state.count);
+      this.setState({ count: this.state.count + 1 });
+
+      this.setState({ showLoadingCircle: true });
+      const res = await fetch(url);
+      const parsedRes = await res.json();
+      const newArticles = parsedRes.articles || [];
+
+      if (newArticles.length > 0) {
+        this.setState({ showLoadingCircle: false });
+      }
+
+      this.setState((prevState) => ({
+        articles: [...prevState.articles, ...newArticles],
+        loading: false
+      }));
+
+    } catch (error) {
+      console.error(error)
     }
-
-    const res = await fetch(url);
-    const parsedRes = await res.json();
-
-    const newArticles = parsedRes.articles || [];
-    this.setState((prevState) => ({
-      articles: [...prevState.articles, ...newArticles],
-    }));
   }
 
   async componentDidMount() {
@@ -63,19 +79,21 @@ export default class NewsHomePage extends Component {
   }
 
   handleScroll() {
+    if (this.state.loading) return; // Ignore scroll events if already loading
+
     const { innerHeight } = window;
     const { scrollHeight, scrollTop } = document.documentElement;
 
     if (scrollHeight - scrollTop === innerHeight) {
-      this.setState(
-        (prevState) => ({
-          currentPage: prevState.currentPage + 1,
-        }),
-        async () => {
+      this.setState({ loading: true }, () => {
+        setTimeout(() => {
           const { category } = this.props;
-          await this.fetchArticles(category);
-        }
-      );
+          const nextPage = this.state.currentPage + 1;
+          this.setState({ currentPage: nextPage }, async () => {
+            await this.fetchArticles(category);
+          });
+        }, 1000); // Set a delay of 1000 milliseconds (adjust as needed)
+      });
     }
   }
 
@@ -111,6 +129,7 @@ export default class NewsHomePage extends Component {
           <div className='homepage dis-flex jc-center ai-center flex-wrap'>
             {this.NewsItemsList()}
           </div>
+          <LoadingCircle showLoadingCircle={this.state.showLoadingCircle}></LoadingCircle>
         </div>
       </div>
     );

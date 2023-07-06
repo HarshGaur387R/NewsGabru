@@ -290,3 +290,10 @@ body {
 .sec3-prof-container ul a img {
     width: 100%;
 }
+
+/* ======================================= LOADING CIRCLE =============================*/
+
+.loading-circle-container img{
+    width: 60px;
+    margin-top: 20px;
+}
