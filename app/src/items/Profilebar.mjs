@@ -43,10 +43,10 @@ export default class Profilebar extends Component {
 
                 <li><a href="/" className='text-decoration-none dis-flex jc-flex-start ai-center'>
                   <div className='list-image-container'>
-                    <img src="assets\profilebarImages\settings_FILL1_wght400_GRAD0_opsz48.svg" alt="settings" />
+                    <img src="assets\profilebarImages\add_location_FILL0_wght400_GRAD0_opsz48.svg" alt="settings" />
                   </div>
                   <div className="list-text-container">
-                    Settings
+                    Country
                   </div>
                 </a></li>
 
