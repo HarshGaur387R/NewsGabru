@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300&display=swap');
 
+:root {
+    --brightness: 100%;
+}
+
+
 body {
     overflow-x: hidden;
     background-color: #060047;
@@ -96,24 +101,25 @@ body {
 }
 
 .options-list button {
-    background-color:transparent;
+    background-color: transparent;
     border: none;
-    color: white;
+    color: rgb(168, 168, 168);
     font-size: x-large;
 }
 
-.options-list li button:hover{
-    color: aqua;
+.options-list li button:hover {
+    color: white;
 }
 
-.active{
+.active {
     border-top: 2px solid white;
     background-color: #060047;
 }
 
-.active button{
-    color: aqua;
+.active button {
+    color: white;
 }
+
 /* ============================ HOMEPAGE =============================== */
 
 .homepage {
@@ -166,7 +172,7 @@ body {
 
 /* ===================================== PROFILEBAR =============================== */
 
-.profilebar-event-container{
+.profilebar-event-container {
     z-index: 21;
     position: fixed;
     width: 100%;
@@ -180,7 +186,7 @@ body {
 
 
 .profilebar-container {
-    overflow: hidden;
+    overflow: auto;
     z-index: 22;
     right: 0;
     width: 400px;
@@ -247,12 +253,12 @@ body {
     margin-left: 20px;
 }
 
-.sec3-prof-container li{
+.sec3-prof-container li {
     position: relative;
     margin-top: 10px;
 }
 
-.sec3-prof-container li::before{
+.sec3-prof-container li::before {
     content: '';
     z-index: -1;
     position: absolute;
@@ -263,23 +269,93 @@ body {
     transform: translateX(-410px);
 }
 
-.sec3-prof-container li:hover::before{
+.sec3-prof-container li:hover::before {
     transform: translateX(-20px);
 }
 
-.sec3-prof-container ul li a:hover{
-    filter:brightness(0%);
+.sec3-prof-container ul li:hover {
+    --brightness: 0%
 }
+
+.sec3-prof-container ul li button {
+    gap: 20px;
+    filter: brightness(var(--brightness));
+    border: none;
+    font-family: 'Jura';
+    background-color: transparent;
+}
+
+.languages-button-container {
+    overflow-y: auto;
+    margin-top: 0px;
+    height: 0px;
+    transition: all .2s ease;
+}
+
+.countries-button-container {
+    overflow-y: auto;
+    margin-top: 0px;
+    height: 0px;
+    transition: all .2s ease;
+}
+
+
+/* Track */
+::-webkit-scrollbar {
+    width: 10px;
+    /* Width of the entire scrollbar */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    /* background-color: #494949; */
+    background-color: white;
+    border: 1px solid white;
+    /* Rounded corners of the thumb */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(175, 175, 175);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Track on hover */
+::-webkit-scrollbar-track:hover {
+    background-color: transparent;
+
+}
+
+.country-buttons {
+    display: block;
+    font-family: 'Jura';
+    color: rgb(226, 226, 226);
+    background-color: transparent;
+    border: transparent;
+    padding: 10px;
+    font-size: x-large;
+    width: 100%;
+    text-align: left;
+}
+
+.country-buttons:hover {
+    background-color: #53535357;
+}
+
 
 .sec3-prof-container ul li a {
     gap: 10px;
 }
 
-.sec3-prof-container .list-image-container{
+.sec3-prof-container .list-image-container {
     width: 40px;
 }
 
-.sec3-prof-container .list-text-container{
+.sec3-prof-container .list-text-container {
     color: white;
     font-size: 40px;
     letter-spacing: 2px;
@@ -293,7 +369,7 @@ body {
 
 /* ======================================= LOADING CIRCLE =============================*/
 
-.loading-circle-container img{
+.loading-circle-container img {
     width: 60px;
     margin-top: 20px;
 }

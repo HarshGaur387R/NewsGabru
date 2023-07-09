@@ -38,9 +38,9 @@ export default class NavbarOptions extends Component {
     render() {
 
         const items = [
-            'general', 'business', 'entertainment', 'health', 'science', 'sports', 'technology'];
+            {key:"All", value:"general"}, {key:'Business', value:"business"}, {key:'Entertainment',value:"entertainment"}, {key:'Health',value:'health'}, {key:'Science',value:'science'}, {key:'Sports',value:'sports'}, {key:'Technology',value:'technology'}];
 
-        const listItems = items.map((item, index) => <li onClick={()=>this.handleOnListItemCLick(index,item)} className={this.state.activeIndex === index?'active':''} key={index}><button value={item} type='button'>{item}</button></li>);
+        const listItems = items.map((item, index) => <li onClick={()=>this.handleOnListItemCLick(index,item.value)} className={this.state.activeIndex === index?'active':''} key={index}><button value={item.value} type='button'>{item.key}</button></li>);
 
         return (
             <div>

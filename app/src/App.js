@@ -11,8 +11,8 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showProfileBar: false,
-      category: 'All'
+      showProfileBar: true, // Should be false
+      category: 'general'
     }
     this.setShowProfileBar = this.setShowProfileBar.bind(this);
     this.setCategory = this.setCategory.bind(this);
@@ -36,7 +36,7 @@ export default class App extends Component {
         <Navbar showProfileBar={this.state.showProfileBar} setShowProfileBar={this.setShowProfileBar}></Navbar>
         <Profilebar showProfileBar={this.state.showProfileBar} setShowProfileBar={this.setShowProfileBar}></Profilebar>
         <NavbarOptions setCategory={this.setCategory}></NavbarOptions>
-        <NewsHomePage category={this.state.category} ></NewsHomePage>
+        {/* <NewsHomePage category={this.state.category} ></NewsHomePage> */}
       </div>
     )
   }

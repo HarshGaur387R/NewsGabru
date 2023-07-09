@@ -32,8 +32,8 @@ export default class NewsHomePage extends Component {
     const { currentPage } = this.state;
     let url;
 
-    // url = `${config.TOPHEADLINES_API}?category=${category}&country=in&apiKey=${config.API_KEY}&page=${currentPage}`;
-    url = `${config.TESTING_AP}/category/${category}/in.json`
+    url = `${config.TOPHEADLINES_API}?category=${category}&country=in&apiKey=${config.API_KEY}&page=${currentPage}`;
+    // url = `${config.TESTING_AP}/category/${category}/in.json`
 
     try {
       console.log(this.state.count);
