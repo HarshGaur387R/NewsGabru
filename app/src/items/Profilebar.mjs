@@ -16,7 +16,7 @@ export default class Profilebar extends Component {
 
   CountriesList() {
     return countries.map((countryCode, index) => {
-      return <button type='button' className='country-buttons' value={countryCode.value} key={index}>{countryCode.country}</button>
+      return <button onClick={()=>this.props.setCountry(countryCode.value)} type='button' className='country-buttons' value={countryCode.value} key={index}>{countryCode.country}</button>
     })
   }
 
@@ -88,7 +88,7 @@ export default class Profilebar extends Component {
                     </div>
                   </button>
                 </li>
-                
+
                 <div className='countries-button-container'
                   style={
                     {

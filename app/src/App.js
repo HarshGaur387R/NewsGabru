@@ -11,11 +11,13 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showProfileBar: true, // Should be false
-      category: 'general'
+      showProfileBar: false, // Should be false
+      category: 'general',
+      country: 'in'
     }
     this.setShowProfileBar = this.setShowProfileBar.bind(this);
     this.setCategory = this.setCategory.bind(this);
+    this.setCountry = this.setCountry.bind(this);
   }
 
   setShowProfileBar(bool) {
@@ -30,13 +32,19 @@ export default class App extends Component {
     })
   }
 
+  setCountry(value){
+    this.setState({
+      country: value
+    })
+  }
+
   render() {
     return (
       <div>
         <Navbar showProfileBar={this.state.showProfileBar} setShowProfileBar={this.setShowProfileBar}></Navbar>
-        <Profilebar showProfileBar={this.state.showProfileBar} setShowProfileBar={this.setShowProfileBar}></Profilebar>
+        <Profilebar showProfileBar={this.state.showProfileBar} setShowProfileBar={this.setShowProfileBar} setCountry={this.setCountry}></Profilebar>
         <NavbarOptions setCategory={this.setCategory}></NavbarOptions>
-        {/* <NewsHomePage category={this.state.category} ></NewsHomePage> */}
+        <NewsHomePage category={this.state.category} country={this.state.country} ></NewsHomePage>
       </div>
     )
   }

@@ -28,12 +28,12 @@ export default class NewsHomePage extends Component {
     this.handleScroll = this.handleScroll.bind(this);
   }
 
-  async fetchArticles(category) {
+  async fetchArticles(category,country) {
     const { currentPage } = this.state;
     let url;
 
-    url = `${config.TOPHEADLINES_API}?category=${category}&country=in&apiKey=${config.API_KEY}&page=${currentPage}`;
-    // url = `${config.TESTING_AP}/category/${category}/in.json`
+    url = `${config.TOPHEADLINES_API}?category=${category}&country=${country}&apiKey=${config.API_KEY}&page=${currentPage}`;
+    // url = `${config.TESTING_AP}/category/${category}/${country}.json`
 
     try {
       console.log(this.state.count);
@@ -59,17 +59,17 @@ export default class NewsHomePage extends Component {
   }
 
   async componentDidMount() {
-    const { category } = this.props;
-    await this.fetchArticles(category);
+    const { category, country} = this.props;
+    await this.fetchArticles(category, country);
     window.addEventListener('scroll', this.handleScroll);
   }
 
   async componentDidUpdate(prevProps) {
-    const { category } = this.props;
+    const { category , country} = this.props;
 
-    if (category !== prevProps.category) {
+    if (category !== prevProps.category || country !== prevProps.country) {
       this.setState({ currentPage: 1, articles: [] }, async () => {
-        await this.fetchArticles(category);
+        await this.fetchArticles(category, country);
       });
     }
   }
@@ -87,10 +87,10 @@ export default class NewsHomePage extends Component {
     if (scrollHeight - scrollTop === innerHeight) {
       this.setState({ loading: true }, () => {
         setTimeout(() => {
-          const { category } = this.props;
+          const { category, country } = this.props;
           const nextPage = this.state.currentPage + 1;
           this.setState({ currentPage: nextPage }, async () => {
-            await this.fetchArticles(category);
+            await this.fetchArticles(category, country);
           });
         }, 1000); // Set a delay of 1000 milliseconds (adjust as needed)
       });
