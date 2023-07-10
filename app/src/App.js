@@ -13,7 +13,7 @@ export default class App extends Component {
     this.state = {
       showProfileBar: false, // Should be false
       category: 'general',
-      country: 'in'
+      country: 'in',
     }
     this.setShowProfileBar = this.setShowProfileBar.bind(this);
     this.setCategory = this.setCategory.bind(this);
@@ -38,12 +38,16 @@ export default class App extends Component {
     })
   }
 
+  setTitle(title){
+    document.title = `News Gabru - ${title}`;
+  }
+
   render() {
     return (
       <div>
         <Navbar showProfileBar={this.state.showProfileBar} setShowProfileBar={this.setShowProfileBar}></Navbar>
         <Profilebar showProfileBar={this.state.showProfileBar} setShowProfileBar={this.setShowProfileBar} setCountry={this.setCountry}></Profilebar>
-        <NavbarOptions setCategory={this.setCategory}></NavbarOptions>
+        <NavbarOptions setCategory={this.setCategory} setTitle={this.setTitle}></NavbarOptions>
         <NewsHomePage category={this.state.category} country={this.state.country} ></NewsHomePage>
       </div>
     )

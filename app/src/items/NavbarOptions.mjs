@@ -10,11 +10,12 @@ export default class NavbarOptions extends Component {
         this.navbarItemListRef = React.createRef();
     }
 
-    handleOnListItemCLick(index,value){
+    handleOnListItemCLick(index,value,key){
         this.setState({
             activeIndex : index
         })
         this.props.setCategory(value)
+        this.props.setTitle(key)
     }
 
     handleNextClick = () => {
@@ -40,7 +41,7 @@ export default class NavbarOptions extends Component {
         const items = [
             {key:"All", value:"general"}, {key:'Business', value:"business"}, {key:'Entertainment',value:"entertainment"}, {key:'Health',value:'health'}, {key:'Science',value:'science'}, {key:'Sports',value:'sports'}, {key:'Technology',value:'technology'}];
 
-        const listItems = items.map((item, index) => <li onClick={()=>this.handleOnListItemCLick(index,item.value)} className={this.state.activeIndex === index?'active':''} key={index}><button value={item.value} type='button'>{item.key}</button></li>);
+        const listItems = items.map((item, index) => <li onClick={()=>this.handleOnListItemCLick(index,item.value,item.key)} className={this.state.activeIndex === index?'active':''} key={index}><button value={item.value} type='button'>{item.key}</button></li>);
 
         return (
             <div>
