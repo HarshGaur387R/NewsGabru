@@ -46,16 +46,13 @@ export default class NavbarOptions extends Component {
         return (
             <div>
                 <nav className="navbar2 jc-center ai-center psn-fixed dis-flex">
-                    <img
-                        id="PreviousButton"
-                        src="assets\arrowBackward.svg"
-                        alt="Previous arrow"
-                        onClick={this.handlePrevClick}
-                    />
+                    <img id="PreviousButton" className='arrowButton' src="assets\arrowBackward.svg" alt="Previous arrow" onClick={this.handlePrevClick}/>
+
                     <ul className="options-list dis-flex list-none" ref={this.navbarItemListRef}>
                         {listItems}
                     </ul>
-                    <img id="NextButton" src="assets\arrowForward.svg" alt="Next arrow" onClick={this.handleNextClick} />
+                    
+                    <img id="NextButton" className='arrowButton' src="assets\arrowForward.svg" alt="Next arrow" onClick={this.handleNextClick} />
                 </nav>
             </div>
         );

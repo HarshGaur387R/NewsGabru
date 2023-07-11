@@ -16,7 +16,7 @@ export default class Profilebar extends Component {
 
   CountriesList() {
     return countries.map((countryCode, index) => {
-      return <button onClick={()=>this.props.setCountry(countryCode.value)} type='button' className='country-buttons' value={countryCode.value} key={index}>{countryCode.country}</button>
+      return <button onClick={() => this.props.setCountry(countryCode.value)} type='button' className='country-buttons' value={countryCode.value} key={index}>{countryCode.country}</button>
     })
   }
 
@@ -42,6 +42,8 @@ export default class Profilebar extends Component {
       <>
         <div className='profilebar-event-container' onClick={(event) => this.handleOnEventContainerClick(event)}>
           <div id='profilebar-container-id' className='profilebar-container psn-fixed'>
+
+
             <div className='sec1-prof-container dis-flex ai-center jc-center'>
               <div className='image-container dis-flex jc-center ai-center'>
                 <img src="assets\person_FILL1_wght400_GRAD0_opsz48.svg" alt="profile-pic" />
@@ -54,6 +56,15 @@ export default class Profilebar extends Component {
             </div>
 
             <hr />
+
+            <div className='dis-flex ai-center jc-center'>
+
+              <div className="profileBarInputContainer dis-flex ai-center jc-center">
+                <input id='searchInputProfileBar' type="text" placeholder='SEARCH' />
+                <img id='searchIcon' className='' src="assets\search_FILL1_wght400_GRAD0_opsz48.svg" alt="Search Icon" />
+              </div>
+            </div>
+
 
             <div className='sec3-prof-container'>
               <ul className='list-none'>

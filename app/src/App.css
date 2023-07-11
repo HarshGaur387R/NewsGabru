@@ -16,10 +16,16 @@ body {
 .navbar1 {
     z-index: 20;
     background-color: #050036;
-    width: calc(100vw - 210px);
+   
+}
+
+
+.navbar1-item-container{
     height: 80px;
     padding-left: 100px;
     padding-right: 110px;
+    width: calc(100vw - 210px);
+
 }
 
 .websiteLogoContainer {
@@ -74,6 +80,37 @@ body {
     width: 35px;
 }
 
+
+.hamburger-menu{
+    width: 50px;
+    padding: 2px;
+}
+
+.hamburger-menu img{
+    width: 100%;
+}
+
+.hamburger-menu::after{
+    content: '';
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin:auto;
+    border-radius: 50%;
+    background-color: rgba(112, 112, 112, 0.44);
+    transition: all .1s ease;
+    scale: calc(0.7);
+}
+
+
+.hamburger-menu:active::after{
+   scale: calc(1);
+}
 /* ========================= NAVBAR OPTIONS ========================= */
 
 
@@ -248,6 +285,30 @@ body {
     width: 100%;
 }
 
+
+.profileBarInputContainer{
+    display: none !important;
+    margin-top: 15px;
+    width: 300px;
+    background-color: #46001E;
+    box-shadow: inset -2px 4px 4px 0px rgb(0, 0, 0, 0.25);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+}
+
+.profileBarInputContainer input{
+    background-color: transparent;
+    color: white;
+    border: none;
+    width: 100%;
+    font-size: 20px;
+    outline: transparent;
+}
+
+
 .sec3-prof-container ul {
     margin-top: 20px;
     margin-left: 20px;
@@ -274,7 +335,7 @@ body {
 }
 
 .sec3-prof-container ul li:hover {
-    --brightness: 0%
+    --brightness: 0%;
 }
 
 .sec3-prof-container ul li button {
@@ -372,4 +433,184 @@ body {
 .loading-circle-container img {
     width: 60px;
     margin-top: 20px;
+}
+
+
+@media (max-width: 1200px) {
+
+
+    .cardContainer{
+        min-width: 250px;
+        width: 300px;
+        height: 200px;
+    }
+
+    .cardContainer .newsTitle{
+        font-size: medium;
+    }
+
+    .cardContainer .newsPreview{
+        font-size: small;
+    }
+
+    .cardContainer .cardFooter{
+        font-size: smaller;
+    }
+}
+
+
+@media (max-width: 1000px) {
+
+
+    .cardContainer{
+        min-width: 250px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .cardContainer .newsTitle{
+        font-size: small;
+    }
+
+    .cardContainer .newsPreview{
+        font-size: smaller;
+    }
+
+    .cardContainer .cardFooter{
+        font-size: x-small;
+    }
+}
+
+
+@media (max-width: 970px){
+    .searchAndProfilePicContainer {
+        gap: 40px;
+        max-width: 700px;
+        display: none !important;
+    }
+
+    .hamburger-menu{
+        display: block !important;
+    }
+
+    .profileBarInputContainer{
+        display: flex !important;
+    }
+
+    .buttons-container button{
+        width: 100px;
+        height: 50px;
+        font-size: large;
+    }
+
+    .image-container{
+        width: 70px;
+        height: 70px;
+    }
+
+    
+    .sec3-prof-container .list-text-container {
+        font-size: 35px;
+    }
+}
+
+
+@media (max-width:840px) {
+
+    .options-list button {
+        font-size: large;
+    }
+
+    .arrowButton{
+        width: 30px;
+    }
+
+    .navbar1-item-container{
+        height: 80px;
+        padding-left: 50px;
+        padding-right: 60px;
+        width: calc(100vw - 110px);
+    
+    }
+}
+
+
+@media (max-width:600px){
+    
+     .cardContainer{
+        min-width: 250px;
+        width: 350px;
+        height: 200px;
+    }
+
+    .profilebar-container{
+        width: 300px;
+    }
+
+    .profileBarInputContainer{
+        width: 250px;
+    }
+
+
+    .sec3-prof-container .list-text-container{
+        font-size: large;
+    }
+
+    .sec3-prof-container .list-image-container  img{
+        width: 80%;
+    }
+
+   .country-buttons{
+        font-size: medium;
+   }
+
+   .websiteLogoContainer{
+    font-size: 20px;
+   }
+
+   .navbar1-item-container{
+    padding-left: 30px;
+    padding-right: 40px;
+    width: calc(100vw - 70px);
+   }
+
+   .hamburger-menu{
+    width: 40px;
+   }
+
+}
+
+@media (max-width:360px){
+
+    .navbar1-item-container{
+        padding-left: 20px;
+        padding-right: 30px;
+        width: calc(100vw - 50px);
+    }
+
+    .cardContainer{
+        min-width: 200px;
+        width: 300px;
+        height: 200px;
+    }
+
+    .profilebar-container{
+        width: 230px;
+    }
+
+    .image-container{
+        width: 40px;
+        height: 40px;
+
+    }
+
+    .buttons-container button{
+        width: 70px;
+        height: 40px;
+        font-size: small;
+    }
+
+    .profileBarInputContainer{
+        width: 170px;
+    }
 }

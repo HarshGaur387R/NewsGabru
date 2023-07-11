@@ -11,7 +11,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showProfileBar: false, // Should be false
+      showProfileBar: true, // Should be false
       category: 'general',
       country: 'in',
     }
