@@ -104,12 +104,12 @@ body {
     border-radius: 50%;
     background-color: rgba(112, 112, 112, 0.44);
     transition: all .1s ease;
-    scale: calc(0.7);
+    display: none;
 }
 
 
 .hamburger-menu:active::after{
-   scale: calc(1);
+    display: block;
 }
 /* ========================= NAVBAR OPTIONS ========================= */
 
